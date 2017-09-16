@@ -28,8 +28,7 @@ public class Time_Picker extends Activity
         TimePickerDialog timePickerDialog;
         final static int RQS_1 = 1;
 
-        //@Override
-        /*
+        @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
@@ -48,7 +47,7 @@ public class Time_Picker extends Activity
                 myTimePicker.setCurrentMinute(calendar.get(Calendar.MINUTE));
             }
         }
-        */
+
         public void openTimePickerDialog()
         {
             Calendar calendar = Calendar.getInstance();
@@ -68,10 +67,10 @@ public class Time_Picker extends Activity
                 cal.set(myTimePicker.getCurrentHour(), myTimePicker.getCurrentMinute()+second, 00);
             }
             */
-            setAlarm(cal);
+            //setAlarm(cal);
         }
 
-        public void setAlarm(Calendar targetCal)
+        public void setAlarm(Context context)
         {
             Log.i("error", "aaaaaaaaaaaaaaaaaa");
             AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
@@ -80,6 +79,6 @@ public class Time_Picker extends Activity
             Log.i("error", "bbbbbbbbbbbbbbbbbbbbb");
             PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), RQS_1, intent, 0);
             //AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-            alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
+            alarmManager.set(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(), pendingIntent);
         }
 }
