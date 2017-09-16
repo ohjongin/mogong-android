@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".Time_Picker">
+            <service android:name="Time_Picker">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            </service>
+        </activity>
+        android:theme="@style/AppTheme">
+        <receiver android:name=".AlarmReceiver"/>
     </application>
 
 </manifest>

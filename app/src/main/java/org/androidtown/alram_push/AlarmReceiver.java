@@ -13,7 +13,7 @@ import android.widget.Toast;
  * Created by samsung on 2017-09-16.
  */
 
-public class AlramReceiver extends BroadcastReceiver
+public class AlarmReceiver extends BroadcastReceiver
 {
     private static final int MY_NOTIFICATION_ID = 0;
     NotificationManager notificationManager;
